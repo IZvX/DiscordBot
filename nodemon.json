@@ -1,0 +1,6 @@
+{
+    "ignore": [
+      "/home/*"
+    ],
+    "ext": "js,json"
+  }

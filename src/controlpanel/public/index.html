@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Admin Panel</h3>
+        <div class="sidebar-item">
+            <a href="#" class="tab-link active" data-tab="ticket-settings"><i class="fas fa-cogs"></i> Ticket Settings</a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#" class="tab-link" data-tab="category-role-management"><i class="fas fa-users-cog"></i> Category & Role Management</a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#" class="tab-link" data-tab="account-ticket-controls"><i class="fas fa-shield-alt"></i> Account & Ticket Controls</a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#" class="tab-link" data-tab="user-actions"><i class="fas fa-user-slash"></i> User Actions</a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#" class="tab-link" data-tab="global-variables"><i class="fas fa-file-alt"></i> Global Variables</a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#" class="tab-link" data-tab="global-variables"><i class="fa-brands fa-paypal"></i> Paypal</a>
+        </div>
+    </div>
+    
+    <!-- Tab Content -->
+    <div class="tabcontent-container">
+        <div id="ticket-settings" class="tabcontent active">
+            <h2>Ticket Settings</h2>
+            <p>Configure ticket-related options below.</p>
+            <button id="toggleLinkedAccount">Toggle Linked Account Check</button>
+            <button id="reminderBtn">Send Vouch Reminder</button>
+            <button id="clearTicketsBtn">Clear All Tickets</button>
+        </div>
+
+        <div id="category-role-management" class="tabcontent">
+            <h2>Category & Role Management</h2>
+            <label for="categoryDropdown">Select Category:</label>
+            <select id="categoryDropdown">
+            </select>
+            <button id="confirmCategory">Confirm Category</button>
+
+            <label for="roleDropdown">Select Role:</label>
+            <select id="roleDropdown">
+            </select>
+            <div>
+                <button class="role-button" role-type="regularCustomer">Regular Customer</button>
+                <button class="role-button" role-type="loyalCustomer">Loyal Customer</button>
+                <button class="role-button" role-type="VIPCustomer">VIP Customer</button>
+                <button class="role-button" role-type="blacklist">Blacklist</button>
+            </div>
+        </div>
+
+        <div id="account-ticket-controls" class="tabcontent">
+            <h2>Account & Ticket Controls</h2>
+            <label for="channelsDropdown">Select Channel:</label>
+            <select id="channelsDropdown">
+            </select>
+            <button id="createEmbed">Create Ticket Embed</button>
+            <div id="embedFeedback" style="display: none;"></div>
+        </div>
+
+        <div id="user-actions" class="tabcontent">
+            <h2>User Actions</h2>
+            <p>Manage user actions here.</p>
+        
+            <label for="userIdInput">User ID:</label>
+            <input type="text" id="userIdInput" placeholder="Enter User ID">
+        
+            <button id="banBtn">Ban</button>
+            <button id="unbanBtn">Unban</button>
+            <button id="muteBtn">Mute</button>
+            <button id="unmuteBtn">Unmute</button>
+            <button id="kickBtn">Kick</button>
+        
+            <h3>Banned Users:</h3>
+            <ul id="bannedUsersList"></ul>
+        
+            <h3>Muted Users:</h3>
+            <ul id="mutedUsersList"></ul>
+        </div>  
+
+        <div id="global-variables" class="tabcontent">
+            <h2>Global Variables</h2>
+            <p>Here are all the available JSON files:</p>
+            <ul id="jsonFileList"></ul> <!-- List of JSON files -->
+
+            <div id="jsonContent" class="json-content-container"></div> <!-- Area to display JSON file content -->
+            
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

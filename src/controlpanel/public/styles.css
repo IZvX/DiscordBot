@@ -1,0 +1,311 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e1e; /* Dark gray background */
+    color: #eee; /* Light gray text */
+    display: flex;
+    height: 100vh;
+    padding: 0;
+}
+
+.sidebar {
+    width: 320px;
+    background-color: #282828; /* Slightly darker gray sidebar */
+    padding: 0px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar h3 {
+    color: #66bb6a; /* Greenish accent color */
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    margin-left: 10%;
+}
+
+
+.sidebar-item a {
+    display: block;
+    text-decoration: none;
+    color: #eee;
+    padding: 10px 15px;
+    transition: background-color 0.2s ease;
+    border-radius: 12px;
+    margin-bottom: 5px;
+    margin-left: 2.5%;
+    width: calc(100% - 5%);
+    box-sizing: border-box;
+    text-align: left;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+}
+
+.sidebar-item a:hover,
+.sidebar-item a.active {
+    background-color: #444; /* Darker gray on hover/active */
+}
+
+.sidebar-item a i {
+    margin-right: 10px;
+    margin-left: calc(10%);
+}
+
+.tabcontent-container {
+    flex: 1;
+    padding: 0px;
+    background-color: #333; /* Slightly lighter gray for tab content */
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 0px;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+.tabcontent h2 {
+    color: #66bb6a; /* Same green accent color */
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.tabcontent p {
+    margin-bottom: 10px;
+}
+
+.tabcontent label {
+    display: block; /* Make labels take full width */
+    margin-bottom: 5px;
+}
+
+.tabcontent select, .tabcontent button {
+    background-color: #444;
+    color: #eee;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.tabcontent button {
+    width: auto; /* Buttons don't need full width */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.tabcontent button:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+/* Styling for the file item and its collapsible content */
+/* Make sure the file item is a flex container */
+.file-item {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #444;
+    display: flex; /* Ensure the item is a flex container */
+    flex-direction: column; /* Stack content vertically */
+    width: 100%; /* Ensure the item takes up the full available width */
+}
+
+/* Styling for the file name */
+.file-name {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    flex-grow: 1; /* Allow file name to take up remaining space */
+    width: 100%; /* Ensure it takes up the full width of the file-item */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+
+.file-content {
+    padding: 10px;
+    background-color: #f9f9f9;
+    display: none; /* Initially hidden */
+}
+
+.jsonContent {
+    margin-top: 10px;
+}
+
+.jsonline {
+    display: flex;
+    padding: 5px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.jsonName {
+    font-weight: bold;
+    margin-right: 10px;
+    width: 50%;
+    color: #555;
+}
+
+.jsonValue {
+    width: 50%;
+    font-size: 14px;
+    color: #333;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-align: left;
+}
+.save-button {
+    margin-left: 10px;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+
+.delete-line-button{
+    margin: 0;
+}
+
+/* General Styles */
+  /* Styles for the user-actions container */
+  #user-actions {
+    padding: 20px; /* Add some padding around the container */
+  }
+  
+  #user-actions h2, #user-actions h3 {
+    margin-bottom: 10px; /* Add spacing below headings */
+  }
+  
+  
+  
+  /* Card Styles */
+  .user-card {
+    width: 300px; /* Adjust card width as needed */
+    margin: 10px; /* Adjust spacing between cards */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ddd; /* Add a thin border for better separation */
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .user-card img.user-pfp { /* Style for the PFP image */
+    width: 50px;  /* Adjust size as needed */
+    height: 50px;
+    border-radius: 50%; /* Make it circular */
+    margin-right: 10px; /* Add some space between image and text */
+    float: left; /* Float the image to the left */
+  }
+  
+  .user-info {
+    /*clear the float*/
+    clear: both;
+    margin-bottom: 10px;
+  }
+  
+
+  .user-info h3 {
+    margin-top: 0; /* Remove extra space above the username */
+    font-size: 1.1em; /*Slightly larger username*/
+    color: #333; /* Darker gray for username */
+  }
+  
+  .user-info p {
+    margin-bottom: 0; /* Remove extra space below the reason */
+    font-size: 14px;
+    color: #555; /* Darker gray for reason */
+  }
+  
+  /* List Styles (for horizontal arrangement) */
+  #user-actions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Arrange cards horizontally */
+    flex-wrap: wrap; /* Wrap to new lines if necessary */
+    justify-content: start; /* Distribute space evenly */
+  }
+  
+  #user-actions li {
+    margin: 10px; /* Adjust spacing between cards */
+  }
+  
+  .unban-btn {
+    float: right;
+    margin-left: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    /*adjust the following styles if necessary*/
+    font-size: 14px; /*Adjust icon and text size*/
+    align-items: center; /*Vertically align icon and text*/
+    display: flex; /*Use flexbox for easy alignment*/
+  }
+  
+  .unban-btn i { /* Style the Font Awesome icon */
+      margin-right: 0px;
+  }
+  
+  #user-actions label {
+    display: block; /* Label takes up the full width */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ccc; /* Slightly lighter gray for labels */
+  }
+  
+  #user-actions input[type="text"] {
+    width: calc(100% - 20px); /* Use available space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in width */
+    margin-bottom: 15px; /* Space below input field */
+  }
+
+  
+  /* Responsive adjustments (optional) - example for smaller screens */
+  @media (max-width: 768px) {
+    .user-card {
+      width: calc(50% - 20px); /* Adjust width for smaller screens */
+      margin: 10px;
+    }
+    #user-actions ul {
+      justify-content: flex-start; /*Left-align cards on smaller screens*/
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .user-card {
+      width: calc(100% - 20px); /* Full width on very small screens */
+      margin: 10px;
+    }
+  }
+  
